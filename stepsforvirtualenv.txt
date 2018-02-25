@@ -1,0 +1,15 @@
+To install virtual Environment.
+1. pip install virtualenv
+To Create a virtual Environment.
+2. virtualenv "project_name"
+To Run Environment .
+3.source "project_name"/bin/activate
+To check its Working
+4.which python , which pip
+To Deactive 
+5. deactive
+*********Working ***************
+
+pip freeze --local >reqirements.txt
+to install package from reqirements.txt
+pip install -r reqirements.txt 

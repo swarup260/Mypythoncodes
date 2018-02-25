@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %} {% block title %}Signup{% endblock %} {%block content%}
+<form class="form-signin">
+    <div class="text-center mb-4">
+        <a class="btn btn-primary" href="/signup">Signup</a>
+    </div>
+    <div class="form-label-group">
+        <input type="text" id="input" class="form-control" placeholder="Name " required autofocus>
+        <label for="inputEmail">Full Name</label>
+    </div>
+    <div class="form-label-group">
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+        <label for="inputEmail">Email address</label>
+    </div>
+    <label class="form-check-label">Gender</label>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
+        <label class="form-check-label" for="inlineRadio1">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
+        <label class="form-check-label" for="inlineRadio2">Female</label>
+    </div>
+    <div class="form-label-group">
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <label for="inputPassword">Password</label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+</form>
+{% endblock %}
