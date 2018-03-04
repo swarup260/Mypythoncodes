@@ -13,3 +13,8 @@ To Deactive
 pip freeze --local >reqirements.txt
 to install package from reqirements.txt
 pip install -r reqirements.txt 
+
+
+
+
+class flask.Flask(import_name, static_path=None, static_url_path=None, static_folder='static', template_folder='templates', instance_path=None, instance_relative_config=False, root_path=None)
