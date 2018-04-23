@@ -1,6 +1,12 @@
-from flask import Flask,render_template,flash,request,session,logging,redirect,url_for
+from flask import Flask,render_template,url_for,flash,redirect,session,logging,request,jsonify
 from form import Signupform,Signinform
+from passlib.hash import sha256_crypt
+from flask_mysqldb import MySQL
+from ScrapingData import MyAnimeList
+
 app = Flask(__name__)
+data = MyAnimeList(2018,'summer')
+
 
 @app.route('/')
 def home():
@@ -19,8 +25,21 @@ def signin():
 
 @app.route('/signup',methods=['GET','POST'])
 def signup():
-    return render_template('siginup.html')
+    form = Signupform(request.form)
+    if(request.method == 'POST' and form.validate()):
+        return render_template('siginup.html')
+    # return render_template('siginup.html')
 
+
+@app.route('/json')
+def json():
+    repsData =  data.scrapingData()
+    return jsonify(repsData)
+
+
+@app.errorhandler(404)
+def error(e):
+    return render_template('404.html')
 ''' Run the flask application  
 Debug mode
 '''

@@ -1,5 +1,4 @@
-from flask_wtf import Form
-from wtforms import TextField, PasswordField, RadioField, validators
+from wtforms import Form ,TextField, PasswordField, RadioField, validators
 
 class Signupform(Form):
     #name field

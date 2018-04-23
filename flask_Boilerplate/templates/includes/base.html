@@ -12,18 +12,9 @@
 <body>
     {% include 'includes/nav.html'%}
      {%block content %} {% endblock %}
-    <script>
-        if (navigator.serviceWorker.controller) {
-                console.log('[PWA Builder] active service worker found, no need to register')
-            } else {
-                //Register the ServiceWorker
-                 navigator.serviceWorker.register('{{url_for('SERVER_NAME',filename="js/pwabuilder-sw.js")}}', {
-                    scope: './'
-                }).then(function (reg) {
-                    console.log('Service worker has been registered for scope:' + reg.scope);
-               }); 
-            }
-    </script>
-</body>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="{{ url_for('static',filename="js/app.js")}}"></script>
 
+</body>
 </html>
