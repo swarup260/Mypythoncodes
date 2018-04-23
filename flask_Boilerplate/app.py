@@ -5,7 +5,6 @@ from flask_mysqldb import MySQL
 from ScrapingData import MyAnimeList
 
 app = Flask(__name__)
-data = MyAnimeList(2018,'summer')
 
 
 @app.route('/')
@@ -31,8 +30,9 @@ def signup():
     # return render_template('siginup.html')
 
 
-@app.route('/json')
-def json():
+@app.route('/json/<int:yrs>/<season>')
+def json(yrs,season):
+    data = MyAnimeList(yrs,season)
     repsData =  data.scrapingData()
     return jsonify(repsData)
 
