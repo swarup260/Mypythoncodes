@@ -1,0 +1,254 @@
+{% extends "./_includes/_base.html" %}
+{% from "./_includes/_from.html" import render_field %}
+ {% block content %}<!-- modal start-->
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Update Profile Picture</h4>
+            <form method="POST" action="" enctype="multipart/form-data">
+                         {{ form.hidden_tag() }}
+                        {% if form.profile.errors %}
+                         {% for error in form.profile.errors %}
+                        <span class="helper-text" data-error="wrong" data-success="right">
+                            {{ error }}
+                        </span>
+                        {% endfor%} 
+                        {% endif%}
+                        {{form.profile}}
+                {{ form.submit(class="btn waves-effect waves-light btn-large btn-inherit")}}
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+        </div>
+
+        <!-- end of modal-->
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://loremflickr.com/1080/550">
+                        <span class="card-title">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="{{ url_for('static' ,filename='profile_pics/' + user.profile_img) }}" alt="" class="img-circle hide-on-small-only">
+                                </div>
+                                <div class="col">
+                                    <br>
+                                    <br>
+                                    <span>
+                                        <h4>{{session['user_username']}}</h4>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </span>
+                        <a data-target="modal1" class="btn-floating halfway-fab waves-effect waves-light red modal-trigger">
+                            <i class="material-icons">edit</i>
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="row">
+                            <div class="col s12">
+                                <ul class="tabs">
+                                    <li class="tab col s3">
+                                        <a href="#test1">ABOUT US</a>
+                                    </li>
+                                    <li class="tab col s3">
+                                        <a class="active" href="#test2">PHOTO GALLERY</a>
+                                    </li>
+                                    <li class="tab col s3">
+                                        <a href="#test3">SUMMARY</a>
+                                    </li>
+                                    <li class="tab col s3">
+                                        <a href="#test4">FEEDS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="test1" class="col s12">
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta numquam, quia dolorem consequatur recusandae quam, repudiandae
+                                    quod necessitatibus adipisci doloribus minus molestiae est cum amet tempora quo quae
+                                    laborum reiciendis quisquam culpa unde? Officia ut nobis harum soluta aliquid et consectetur,
+                                    commodi recusandae dolorum earum repellat libero voluptatem. Assumenda eligendi, odio
+                                    voluptas nisi corporis fugit laboriosam similique nihil, recusandae ipsam exercitationem
+                                    obcaecati suscipit dolorem sit quod nesciunt magnam aut? Optio eaque fuga illo numquam!
+                                    Quod officia aliquam laborum maiores eum natus cum exercitationem illum neque sint velit
+                                    accusamus, quia a voluptatum alias qui laboriosam sapiente distinctio, praesentium quisquam,
+                                    nihil aspernatur!
+                                </p>
+                            </div>
+                            <div id="test2" class="col s12">
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta numquam, quia dolorem consequatur recusandae quam, repudiandae
+                                    quod necessitatibus adipisci doloribus minus molestiae est cum amet tempora quo quae
+                                    laborum reiciendis quisquam culpa unde? Officia ut nobis harum soluta aliquid et consectetur,
+                                    commodi recusandae dolorum earum repellat libero voluptatem. Assumenda eligendi, odio
+                                    voluptas nisi corporis fugit laboriosam similique nihil, recusandae ipsam exercitationem
+                                    obcaecati suscipit dolorem sit quod nesciunt magnam aut? Optio eaque fuga illo numquam!
+                                    Quod officia aliquam laborum maiores eum natus cum exercitationem illum neque sint velit
+                                    accusamus, quia a voluptatum alias qui laboriosam sapiente distinctio, praesentium quisquam,
+                                    nihil aspernatur!
+                                </p>
+                            </div>
+                            <div id="test3" class="col s12">
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta numquam, quia dolorem consequatur recusandae quam, repudiandae
+                                    quod necessitatibus adipisci doloribus minus molestiae est cum amet tempora quo quae
+                                    laborum reiciendis quisquam culpa unde? Officia ut nobis harum soluta aliquid et consectetur,
+                                    commodi recusandae dolorum earum repellat libero voluptatem. Assumenda eligendi, odio
+                                    voluptas nisi corporis fugit laboriosam similique nihil, recusandae ipsam exercitationem
+                                    obcaecati suscipit dolorem sit quod nesciunt magnam aut? Optio eaque fuga illo numquam!
+                                    Quod officia aliquam laborum maiores eum natus cum exercitationem illum neque sint velit
+                                    accusamus, quia a voluptatum alias qui laboriosam sapiente distinctio, praesentium quisquam,
+                                    nihil aspernatur!
+                                </p>
+                            </div>
+                            <div id="test4" class="col s12">
+                                <p>
+                                    <!--card-->
+                                    <div class="card-panel">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="left-align">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit laudantium in similique aperiam animi exercitationem
+                                                            fuga omnis nostrum expedita quibusdam maiores et ea architecto, ipsam sapiente dolores accusamus
+                                                            maxime iste asperiores fugiat molestiae quae. Numquam exercitationem, facere quaerat ut, veritatis
+                                                            placeat, reiciendis ipsa autem amet sequi explicabo unde quo.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <!--card-->
+                                    <div class="card-panel">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="left-align">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit laudantium in similique aperiam animi exercitationem
+                                                            fuga omnis nostrum expedita quibusdam maiores et ea architecto, ipsam sapiente dolores accusamus
+                                                            maxime iste asperiores fugiat molestiae quae. Numquam exercitationem, facere quaerat ut, veritatis
+                                                            placeat, reiciendis ipsa autem amet sequi explicabo unde quo.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <!--card-->
+                                    <div class="card-panel">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="left-align">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit laudantium in similique aperiam animi exercitationem
+                                                            fuga omnis nostrum expedita quibusdam maiores et ea architecto, ipsam sapiente dolores accusamus
+                                                            maxime iste asperiores fugiat molestiae quae. Numquam exercitationem, facere quaerat ut, veritatis
+                                                            placeat, reiciendis ipsa autem amet sequi explicabo unde quo.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <!--card-->
+                                    <div class="card-panel">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="left-align">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit laudantium in similique aperiam animi exercitationem
+                                                            fuga omnis nostrum expedita quibusdam maiores et ea architecto, ipsam sapiente dolores accusamus
+                                                            maxime iste asperiores fugiat molestiae quae. Numquam exercitationem, facere quaerat ut, veritatis
+                                                            placeat, reiciendis ipsa autem amet sequi explicabo unde quo.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <!--card-->
+                                    <div class="card-panel">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="left-align">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit laudantium in similique aperiam animi exercitationem
+                                                            fuga omnis nostrum expedita quibusdam maiores et ea architecto, ipsam sapiente dolores accusamus
+                                                            maxime iste asperiores fugiat molestiae quae. Numquam exercitationem, facere quaerat ut, veritatis
+                                                            placeat, reiciendis ipsa autem amet sequi explicabo unde quo.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <!--card-->
+                                    <div class="card-panel">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="left-align">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit laudantium in similique aperiam animi exercitationem
+                                                            fuga omnis nostrum expedita quibusdam maiores et ea architecto, ipsam sapiente dolores accusamus
+                                                            maxime iste asperiores fugiat molestiae quae. Numquam exercitationem, facere quaerat ut, veritatis
+                                                            placeat, reiciendis ipsa autem amet sequi explicabo unde quo.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <!--card-->
+                                    <div class="card-panel">
+                                        <div class="card-content">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="left-align">
+                                                        <p>
+                                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus odit laudantium in similique aperiam animi exercitationem
+                                                            fuga omnis nostrum expedita quibusdam maiores et ea architecto, ipsam sapiente dolores accusamus
+                                                            maxime iste asperiores fugiat molestiae quae. Numquam exercitationem, facere quaerat ut, veritatis
+                                                            placeat, reiciendis ipsa autem amet sequi explicabo unde quo.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+{% endblock content %}

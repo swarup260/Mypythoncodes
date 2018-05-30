@@ -1,0 +1,29 @@
+{% extends "./_includes/_base.html" %}
+ {% block content %}
+  {% from "./_includes/_from.html" import render_field %}
+<div class="card-panel ">
+    <!-- <span class="card-title">Login</span> -->
+    <h5 class="card-title">UPLOAD POST</h5>
+    <div class="card-content">
+        <p>
+            <form method="POST" action="">
+            {{ render_field(form.title)}}
+            <div class="input-field col s12">
+                    {{ form.hidden_tag() }}
+                    {{form.body.label}}
+                    {% if form.body.errors %}
+                    {% for error in form.body.errors %}
+                    <span class="helper-text" data-error="wrong" data-success="right">
+                        {{ error }}
+                    </span>
+                    {% endfor%} {% endif%}
+                    {{form.body(class="materialize-textarea")}}
+            </div>
+            {{ form.submit(class="btn waves-effect waves-light btn-large btn-inherit")}}
+        </form>
+        </p>
+    </div>
+</div> 
+
+
+{% endblock content %}

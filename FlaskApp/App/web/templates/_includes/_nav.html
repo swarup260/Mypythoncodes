@@ -1,0 +1,95 @@
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+
+            <a href="#!" class="brand-logo">AlchemyApp</a>
+        </div>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+            <li>
+                <a href="{{ url_for('web.home')}}">Home</a>
+            </li>
+            <li>
+                <a href="{{ url_for('web.post')}}">Posts</a>
+            </li>
+            <li>
+                <a href="{{ url_for('web.about')}}">About us</a>
+            </li>
+            {% if session['user_username'] %}
+                <li>
+                   <!-- <a href="{{ url_for('web.myaccount')}}">My Account</a> -->
+                     <a class="dropdown-trigger" href="#!" data-target="dropdown1">My Account<i class="material-icons right">arrow_drop_down</i></a>
+                        <!-- Dropdown Structure -->
+                    <ul id="dropdown1" class="dropdown-content">
+                    <li>
+                        <a href="{{ url_for('web.myaccount')}}">Profile</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('web.userpost')}}">My Post</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('web.updatedetail')}}">Update Detail</a>
+                    </li>
+                    <!-- <li><a href="#!">three</a></li> -->
+                    </ul>
+                </li>
+                <li>
+                    <a href="{{ url_for('web.logout')}}">Logout</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ url_for('web.login')}}">Login</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('web.register')}}">Signup</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li>
+        <a href="{{ url_for('web.home')}}">Home</a>
+    </li>
+    <li>
+        <a href="{{ url_for('web.post')}}">Posts</a>
+    </li>
+    <li>
+        <a href="{{ url_for('web.about')}}">About us</a>
+    </li>
+    {% if session['user_username'] %}
+         <li>
+                   <!-- <a href="{{ url_for('web.myaccount')}}">My Account</a> -->
+                     <a class="dropdown-trigger" href="#!" data-target="dropdown2">My Account<i class="material-icons right">arrow_drop_down</i></a>
+                        <!-- Dropdown Structure -->
+                    <ul id="dropdown2" class="dropdown-content">
+                    <li>
+                        <a href="{{ url_for('web.myaccount')}}">Profile</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('web.userpost')}}">My Post</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('web.updatedetail')}}">Update Detail</a>
+                    </li>
+                    <!-- <li><a href="#!">three</a></li> -->
+                    </ul>
+                </li>
+        <li>
+            <a href="{{ url_for('web.userpost')}}">My Post</a>
+        </li>
+        <li>
+            <a href="{{ url_for('web.logout')}}">Logout</a>
+        </li>
+    {% else %}
+        <li>
+            <a href="{{ url_for('web.login')}}">Login</a>
+        </li>
+        <li>
+            <a href="{{ url_for('web.register')}}">Signup</a>
+        </li>
+    {% endif %}
+</ul>

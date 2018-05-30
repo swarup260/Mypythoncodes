@@ -1,0 +1,35 @@
+{% extends "./_includes/_base.html" %}
+ {% block content %} 
+ {% from "./_includes/_from.html" import render_field %}
+<div class="card-panel ">
+    <!-- <span class="card-title">Login</span> -->
+    <h5 class="card-title">Update Detail</h5>
+    <div class="card-content">
+        <p>
+    <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="">
+                        {{ form.name.label }}
+                    </label>
+            {{ form.name(disabled=True)}}
+                </div>
+            </div>
+            {{ render_field(form.email )}}
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="">
+                        {{ form.username.label }}
+                    </label>
+            {{ form.username(disabled=True)}}
+                </div>
+            </div>
+            {{ render_field(form.newpassword )}}
+            {{ render_field(form.confirm_password )}}
+        {{ form.submit(class="btn waves-effect waves-light btn-large btn-inherit")}}
+    </form>
+    </p>
+    </div>
+    </div>
+ {% endblock content %}
