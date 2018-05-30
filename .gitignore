@@ -1,3 +1,5 @@
 flaskproject/
 flask/
 .vscode/
+__pycache__
+.idea
