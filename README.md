@@ -19,19 +19,18 @@ My Python Scripts
         source virtualFolder/bin/activate
 4.  Deactivate the Environment
    ```bash
-        deactivate
+                deactivate
    ```
 
 # Check the python version 
    ```bash
-    which python
+                which python
    ```
 
 # pip freeze dependency
-```bash
+  ```bash
         #Freeze
        pip freeze > reqirements.txt
        #install from reqirements.txt
         pip install -r reqirements.txt 
-```
-
+  ```
