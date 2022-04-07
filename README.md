@@ -5,11 +5,13 @@ My Python Scripts
 
 1. Install *virtualenv*
    ```bash
-        pip install virtualenv
+        pip install virtualenv 
    ```
 2. create a Virtual Environment
    ```bash
         virtualenv $envname
+        // alternative
+        python -m virtualenv ml
    ```
 3. Activate the Environment
    ```bash
